@@ -1,0 +1,88 @@
+﻿@model EvaluatieApp.Models.EvaluationListModel
+@{
+    ViewBag.Title = "EvaluationList";
+}
+
+<h2>EvaluationList</h2>
+
+<div class="page-content">
+    <div class="page-nav">
+
+    </div>
+    <div class="page-container">
+        
+
+
+        <table class="items-table table-bordered table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayName("Title")
+                </th>
+                <th>
+                    @Html.DisplayName("Description")
+                </th>
+                <th>
+                    @Html.DisplayName("Created by")
+                </th>
+                <th>
+                    @Html.DisplayName("Rating")
+                </th>
+            </tr>
+
+            @foreach (var item in Model.items)
+    {
+
+        <tr>
+
+            <td class="td-title">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td class="td-description">
+                <div>@Html.Raw(item.Description)</div>
+
+            </td>
+            <td class="td-createdBy">
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td class="td-rating">
+
+                <div class="rateit" id="rateit_@item.Id" data-rateit-mode="font" style="font-size:30px" data-rateit-min="0" data-rateit-max="5" data-rateit-value="@Html.DisplayFor(modelItem => item.Rating)" data-rateit-step="0.5" data-rateit-resetable="false">
+
+                </div>
+                <p id="ratingText_@item.Id"> @{ var ratingText = "not rated"; if (item.Rating == null) { ratingText = "not rated"; } else { ratingText = item.Rating.ToString(); } } @ratingText </p>
+                <script>
+                        $("#rateit_@item.Id").bind('rated', function () {
+                            
+                                var rating = $(this).rateit('value');
+
+                                var userId = '@Model.user.id';
+                                var itemId = @item.Id;
+
+
+
+                                $.ajax({
+                                    cache: false,
+                                    type: 'POST',
+                                    data: {UserId: userId, ItemId: itemId, Rating: rating},
+                                    url: '@Url.Action("Rating_Changed", "Evaluator")',
+                                    success: function (response) {
+                                        $('#ratingText_@item.Id').html(rating);
+                                    },
+                                    error: function (response) {
+                                        alert(response);
+                                    }
+                                });
+
+
+                            });
+                </script>
+
+            </td>
+        </tr>
+}
+
+        </table>
+
+    </div>
+</div>
+

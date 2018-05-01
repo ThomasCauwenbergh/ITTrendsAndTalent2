@@ -1,0 +1,52 @@
+﻿@model EvaluatieApp.ViewModels.ItemViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<script src="~/Themes/ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript">
+    
+
+    $(function () {
+        $('.date-picker').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: false,
+            dateFormat: 'MM yy',
+
+            onChangeMonthYear: function (year, month) {
+                 $.ajax({
+                         cache: false,
+                         type: 'POST',
+                         data: {Year: year, Month: month},
+                         url: '@Url.Action("UpdateItems", "Teacher")',
+                         success: function (data) {
+                                     $(".page-container").html(data);
+
+                                     }
+                                });
+            },
+        });
+  
+ });
+
+</script>
+
+<style>
+    .ui-datepicker-calendar {
+        display: none;
+    }
+</style>
+<div class="page-content">
+    <div class="page-nav">
+        
+        <div id="calendar" class="date-picker"></div>
+    </div>
+    <div class="page-container">
+        @{
+            Html.RenderPartial("paperView", Model, ViewData);
+        }
+    </div>
+</div>

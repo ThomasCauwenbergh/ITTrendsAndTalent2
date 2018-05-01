@@ -1,0 +1,179 @@
+﻿@model EvaluatieApp.ViewModels.ItemViewModel
+<div class="paper paper1">
+
+    <div class="paper-menu">
+        <div class="item-type">
+            <h3>Onderwijs</h3>
+        </div>
+        <div class="add-item">
+            <a href='@Url.Action("Create", "Teacher", new { type = 1, date = Model.date })'>
+                <img src="../../Content/Images/add-1-icon.png" />
+            </a>
+        </div>
+    </div>
+    <table class="table">
+
+
+        @foreach (var item in Model.Items1)
+        {
+            <tr>
+                <td class="td-title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="td-description">
+                    <div>@Html.Raw(item.Description)</div>
+
+                </td>
+                <td class="td-createdBy">
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td class="td-rating">
+                    <div class="delete">
+                        <a href='@Url.Action("Delete", "Teacher", new { id = item.Id })'>
+                            <img src="../../Content/Images/Very-Basic-Cancel-icon.png" />
+                        </a>
+                    </div>
+                    <div class="rateit" data-rateit-mode="font" style="font-size:30px" data-rateit-min="0" data-rateit-max="5" data-rateit-value="@Html.DisplayFor(modelItem => item.Rating)" data-rateit-step="0.5" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-readonly="true">
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+
+
+<div class="paper paper2">
+    <div class="paper-menu">
+        <div class="item-type">
+            <h3>Onderzoek</h3>
+        </div>
+        <div class="add-item">
+            <a href='@Url.Action("Create", "Teacher", new { type = 2, date = Model.date })'>
+                <img src="../../Content/Images/add-1-icon.png" />
+            </a>
+        </div>
+    </div>
+    <table class="table">
+
+
+        @foreach (var item in Model.Items2)
+        {
+            <tr>
+                <td class="td-title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="td-description">
+                    <div>@Html.Raw(item.Description)</div>
+
+                </td>
+                <td class="td-createdBy">
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td class="td-rating">
+                    <div class="delete">
+                        <a href='@Url.Action("Delete", "Teacher", new { id = item.Id })'>
+                            <img src="../../Content/Images/Very-Basic-Cancel-icon.png" />
+                        </a>
+                    </div>
+                    <div class="rateit" data-rateit-mode="font" style="font-size:30px" data-rateit-min="0" data-rateit-max="5" data-rateit-value="@Html.DisplayFor(modelItem => item.Rating)" data-rateit-step="0.5" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-readonly="true">
+                    </div>
+                    
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="paper paper3">
+    <div class="paper-menu">
+        <div class="item-type">
+            <h3>Dienstverlening</h3>
+        </div>
+        <div class="add-item">
+            <a href='@Url.Action("Create", "Teacher", new { type = 3, date = Model.date })'>
+                <img src="../../Content/Images/add-1-icon.png" />
+            </a>
+        </div>
+    </div>
+    <table class="table">
+
+
+        @foreach (var item in Model.Items3)
+        {
+            <tr>
+                <td class="td-title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="td-description">
+                    <div>@Html.Raw(item.Description)</div>
+
+                </td>
+                <td class="td-createdBy">
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td class="td-rating">
+                    <div class="delete">
+                        <a href='@Url.Action("Delete", "Teacher", new { type = 3 })'>
+                            <img src="../../Content/Images/Very-Basic-Cancel-icon.png" />
+                        </a>
+                    </div>
+                    <div class="rateit" data-rateit-mode="font" style="font-size:30px" data-rateit-min="0" data-rateit-max="5" data-rateit-value="@Html.DisplayFor(modelItem => item.Rating)" data-rateit-step="0.5" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-readonly="true">
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="paper paper4">
+    <div class="paper-menu">
+        <div class="item-type">
+            <h3>Evenementen</h3>
+        </div>
+        <div class="add-item">
+            <a href='@Url.Action("Create", "Teacher", new { type = 4, date = Model.date })'>
+                <img src="../../Content/Images/add-1-icon.png" />
+            </a>
+        </div>
+    </div>
+    <table class="table">
+
+
+        @foreach (var item in Model.Items4)
+        {
+            <tr>
+                <td class="td-title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="td-description">
+                    <div>@Html.Raw(item.Description)</div>
+
+                </td>
+                <td class="td-createdBy">
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td class="td-rating">
+                    <div class="delete">
+                        <a href='@Url.Action("Delete", "teacher", new { id = item.Id })'>
+                            <img src="../../Content/Images/Very-Basic-Cancel-icon.png" />
+                        </a>
+                    </div>
+                    <div class="rateit" data-rateit-mode="font" style="font-size:30px" data-rateit-min="0" data-rateit-max="5" data-rateit-value="@Html.DisplayFor(modelItem => item.Rating)" data-rateit-step="0.5" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-readonly="true">
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".rateit").rateit();
+    });
+</script>

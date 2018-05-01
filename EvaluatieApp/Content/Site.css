@@ -1,0 +1,373 @@
+﻿body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    background-color: #595958;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #FFFFFF
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.logo-img {
+    color: white;
+}
+
+.page-content {
+    width:100%;
+    
+}
+
+.page-container {
+    width: 100%;
+    margin:auto;
+}
+
+.page-container::after {
+    clear:both;
+}
+
+.page-nav {
+    height: 90px;
+    width: 100%;
+}
+
+.calendar {
+    height:100%;
+}
+
+.paper {
+    width: 50%;
+    height: 450px;
+    float: left;
+    border: 1px solid grey;
+    margin: 0px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+
+.table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.paper paper3 {
+    clear: left;
+    
+}
+
+.paper paper1 {
+    overflow:auto;
+    
+}
+
+.td-description {
+    position: relative;
+    vertical-align: top;
+    background-color: white;
+    width: 50%;
+    text-overflow: ellipsis;
+}
+
+    .td-description div {
+        vertical-align: top;
+        position:relative;
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        height: 100px;
+        resize: both;
+        overflow: hidden;
+    }
+
+.td-description div p {
+    vertical-align: top;
+    text-overflow: ellipsis;
+}
+
+.td-title {
+    width: 10%;
+    text-overflow: ellipsis;
+}
+
+.td-createdBy {
+    width: 10%;
+    text-overflow: ellipsis;
+}
+
+.td-rating {
+    width: 20%;
+    min-width: 140px;
+}
+
+.td-rating .rateit {
+    float: left;
+    width: 90%;
+}
+
+
+
+.td-rating .delete {
+    float:right;
+    width:10%;
+    height:100%;
+
+}
+
+.td-rating .delete a img {
+    float:right;
+    height:25px;
+    width: auto;
+    padding:4px;
+}
+
+.paper-menu {
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+}
+
+.users-table {
+    table-layout: fixed;
+    width: 600px;
+    margin:auto;
+}
+
+.items-table {
+    table-layout: fixed;
+    width: 1000px;
+    margin: auto;
+}
+
+.items-table th {
+    text-align: left;
+    padding: 10px;
+}
+
+    .items-table .td-description div {
+        position: relative;
+        vertical-align: top;
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        height: 40px;
+        resize: both;
+        overflow: hidden;
+    } 
+
+.items-table .td-rating {
+    text-align: left;
+    vertical-align:top;
+    height: 20px;
+    padding: 10px;
+} 
+
+.items-table .td-rating .rateit {
+    float:left;
+    width: 65%;
+}
+
+.items-table .td-rating p {
+    float:left;
+    width: 35%;
+    font-size: 18px;
+}
+
+.items-table .td-title {
+    text-align: left;
+    vertical-align:top;
+    height: 20px;
+    padding: 20px;
+} 
+
+.items-table .td-createdBy {
+    text-align: left;
+    vertical-align:top;
+    height: 20px;
+    padding: 20px;
+} 
+
+.items-table .td-actions {
+    text-align: left;
+    vertical-align:top;
+    height: 20px;
+    padding: 20px;
+}
+
+.item-type {
+    float: left;
+    width: 90%;
+    height: 100%;
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+.item-type h3 {
+    font-size: 20px;
+}
+
+.add-item {
+    text-align:center;
+    float: right;
+    width: 10%;
+    height: 100%;
+    margin:auto;
+}
+
+.add-item a img {
+    vertical-align: middle;
+    height:100%;
+    width: auto;
+    padding:15px;
+}
+
+.date-picker {
+    height:100%;
+}
+
+.ui-datepicker {
+    vertical-align:bottom;
+    background-color: #fff;
+    display: none;
+    padding: 30px;
+    font-size:20px;
+    width: 300px;
+    height:100%;
+}
+
+    .ui-datepicker a,
+    .ui-datepicker a:hover {
+        text-decoration: none;
+    }
+
+        .ui-datepicker a:hover,
+        .ui-datepicker td:hover a {
+            color: #2A6496;
+            -webkit-transition: color 0.1s ease-in-out;
+            -moz-transition: color 0.1s ease-in-out;
+            -o-transition: color 0.1s ease-in-out;
+            transition: color 0.1s ease-in-out;
+        }
+
+    .ui-datepicker .ui-datepicker-header {
+        margin-bottom: 4px;
+        text-align: center;
+    }
+
+    .ui-datepicker .ui-datepicker-title {
+        font-weight: 800;
+    }
+
+    .ui-datepicker .ui-datepicker-prev,
+    .ui-datepicker .ui-datepicker-next {
+        cursor: default;
+        font-family: 'Glyphicons Halflings';
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        height: 30px;
+        line-height: 1;
+        margin-top: 2px;
+        width: 40px;
+    }
+
+    .ui-datepicker .ui-datepicker-prev {
+        float: left;
+        text-align: left;
+    }
+
+    .ui-datepicker .ui-datepicker-next {
+        float: right;
+        text-align: right;
+    }
+
+    .ui-datepicker .ui-datepicker-prev:before {
+        content: "\e079";
+    }
+
+    .ui-datepicker .ui-datepicker-next:before {
+        content: "\e080";
+    }
+
+
+.ui-datepicker .ui-icon {
+    display: none;
+ 
+}
+
+
+
+.ui-datepicker .ui-datepicker-calendar {
+    table-layout: fixed;
+    width: 100%;
+}
+
+        .ui-datepicker .ui-datepicker-calendar th,
+        .ui-datepicker .ui-datepicker-calendar td {
+            text-align: center;
+            padding: 4px 0;
+        }
+
+        .ui-datepicker .ui-datepicker-calendar td {
+            border-radius: 4px;
+            -webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+            -moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+            -o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+            transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+        }
+
+            .ui-datepicker .ui-datepicker-calendar td:hover {
+                background-color: #eee;
+                cursor: pointer;
+            }
+
+            .ui-datepicker .ui-datepicker-calendar td a {
+                text-decoration: none;
+            }
+
+    .ui-datepicker .ui-datepicker-current-day {
+        background-color: #4289cc;
+    }
+
+        .ui-datepicker .ui-datepicker-current-day a {
+            color: #fff
+        }
+
+    .ui-datepicker .ui-datepicker-calendar .ui-datepicker-unselectable:hover {
+        background-color: #fff;
+        cursor: default;
+    }
+
+.ui-datepicker-buttonpane .ui-widget-content {
+    float:left;
+}
+
+
+
+
+
+
